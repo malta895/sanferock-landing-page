@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/super-brave');
 @import url('https://fonts.cdnfonts.com/css/kg-why-you-gotta-be-so-mean');
+@import url('https://fonts.cdnfonts.com/css/spline-sans-mono');
 
 @import "tailwindcss";
 
@@ -22,3 +23,13 @@ body {
 }
 .font1 { font-family: 'Super Brave'; }
 .font2 { font-family: 'KG WhY yOu GoTtA Be So MeAn', sans-serif; }
+.font-link-ig { font-family: 'Spline Sans Mono', sans-serif; }
+a {
+  color: rgb(145, 145, 160);
+  text-decoration: underline;
+
+}
+
+a:hover{
+  color: white;
+}
