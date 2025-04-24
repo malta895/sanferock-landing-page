@@ -26,9 +26,8 @@
       })
       .then(data => {
         console.log('Fetched JSON:', data);
-        const sheetData = JSON.stringify(data);
-        const randIdx = getRandomInt(sheetData.values.length-1)
-        const row = sheetData.values[randIdx]
+        const randIdx = getRandomInt(data.values.length-1)
+        const row = data.values[randIdx]
         document.getElementById("phrase_number").innerHTML = row[0]
         document.getElementById("phrase_text").innerHTML = row[1]
       }).catch(err => alert(err))
