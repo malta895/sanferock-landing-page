@@ -30,7 +30,9 @@
         const row = data.values[randIdx]
         document.getElementById("phrase_number").innerHTML = row[0]
         document.getElementById("phrase_text").innerHTML = row[1]
-      }).catch(err => alert(err))
+      }).catch(err => {
+                document.getElementById("phrase_text").innerHTML = err
+      })
     </script>
   </body>
 </html>
