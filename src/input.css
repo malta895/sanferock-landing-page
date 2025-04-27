@@ -1,14 +1,15 @@
 @import url('https://fonts.cdnfonts.com/css/super-brave');
 @import url('https://fonts.cdnfonts.com/css/kg-why-you-gotta-be-so-mean');
 
+body {
+  background: linear-gradient(to bottom, #54e6ed, #d4ff4b);
+}
+
 @import "tailwindcss";
 
 @theme {
   /* ... */
 }
 
-body {
-  background: linear-gradient(to bottom, #54e6ed, #d4ff4b);
-}
 .font1 { font-family: 'Super Brave'; }
 .font2 { font-family: 'KG WhY yOu GoTtA Be So MeAn', sans-serif; }
