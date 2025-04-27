@@ -5,6 +5,10 @@ body {
   background: linear-gradient(to bottom, #54e6ed, #d4ff4b);
 }
 
+a {
+  text-decoration: underline !important;
+}
+
 @import "tailwindcss";
 
 @theme {
