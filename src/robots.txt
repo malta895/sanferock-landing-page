@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /sanferockino.png
+
+Sitemap: https://sanferock.com/sitemap.xml
