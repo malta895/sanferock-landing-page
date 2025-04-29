@@ -9,11 +9,16 @@ a {
   text-decoration: underline !important;
 }
 
+
 @import "tailwindcss";
 
+
 @theme {
-  /* ... */
+  --breakpoint-xs: 26rem;
 }
+
+
+
 
 .font1 { font-family: 'Super Brave'; }
 .font2 { font-family: 'KG WhY yOu GoTtA Be So MeAn', sans-serif; }
