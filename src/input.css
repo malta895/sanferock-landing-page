@@ -14,7 +14,8 @@ a {
 
 
 @theme {
-  --breakpoint-xs: 22rem;
+  --breakpoint-2xs: 19rem;
+  --breakpoint-xs: 24rem;
 }
 
 
