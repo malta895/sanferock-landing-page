@@ -10,7 +10,7 @@
   font-family: 'Super Brave';
   font-style: normal;
   font-weight: 400;
-  src: local("Super Brave") url(./fonts/super-brave.woff) format('woff');
+  src: local("Super Brave"), url(./fonts/super-brave.woff) format('woff');
 }
 
 body {
