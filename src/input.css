@@ -1,5 +1,14 @@
-@import url('https://fonts.cdnfonts.com/css/super-brave');
-@import url('https://fonts.cdnfonts.com/css/kg-why-you-gotta-be-so-mean');
+@font-face {
+  font-family: 'KG WhY yOu GoTtA Be So MeAn';
+  src: url(./fonts/KGWhYYouGoTtABeSoMeAn.ttf);
+}
+
+@font-face {
+  font-family: 'Super Brave';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Super Brave") url(./fonts/super-brave.woff) format("woff");
+}
 
 body {
   background: linear-gradient(to bottom, #54e6ed, #d4ff4b);
@@ -17,9 +26,6 @@ a {
   --breakpoint-2xs: 17rem;
   --breakpoint-xs: 22rem;
 }
-
-
-
 
 .font1 { font-family: 'Super Brave'; }
 .font2 { font-family: 'KG WhY yOu GoTtA Be So MeAn', sans-serif; }
