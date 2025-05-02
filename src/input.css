@@ -2,7 +2,6 @@
   font-family: 'KG WhY yOu GoTtA Be So MeAn';
   font-style: normal;
   font-weight: 400;
-  src: url(./fonts/KGWhYYouGoTtABeSoMeAn.ttf);
   src: local('KG WhY yOu GoTtA Be So MeAn'), url(./fonts/KGWhYYouGoTtABeSoMeAn.woff) format('woff');
 }
 
