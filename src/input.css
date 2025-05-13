@@ -25,8 +25,8 @@ a {
 
 
 @theme {
-  --breakpoint-2xs: 17rem;
-  --breakpoint-xs: 22rem;
+  --breakpoint-2xs: 308px;
+  --breakpoint-xs: 403px;
 }
 
 .font1 { font-family: 'Super Brave'; }
