@@ -1,13 +1,5 @@
-<html>
-  <head>
-    <title>Random</title>
-  </head>
-  <body>
-    <h1>
-      <span id="phrase_number"></span>
-      <span id="phrase_text"></span>
-    </h1>
-    <script type="application/javascript">
+const GOOGLE_API_KEY='AIzaSyASHd9h4n4AVXDFgUGT9K8Ie4zaHzepIBA'
+      
       function getRandomInt(max) {
         return Math.floor(Math.random() * max);
       }
@@ -16,7 +8,7 @@
         {
           headers: new Headers({
             "accept":"application/json",
-            "x-goog-api-key":"AIzaSyASHd9h4n4AVXDFgUGT9K8Ie4zaHzepIBA"
+            "x-goog-api-key": GOOGLE_API_KEY
           })
         }).then(response => {
         if (!response.ok) {
@@ -31,8 +23,5 @@
         document.getElementById("phrase_number").innerHTML = row[0]
         document.getElementById("phrase_text").innerHTML = row[1]
       }).catch(err => {
-                document.getElementById("phrase_text").innerHTML = err
+          document.getElementById("phrase_text").innerHTML = err
       })
-    </script>
-  </body>
-</html>
