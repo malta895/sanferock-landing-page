@@ -20,7 +20,7 @@ const GOOGLE_API_KEY='AIzaSyASHd9h4n4AVXDFgUGT9K8Ie4zaHzepIBA'
         console.log('Fetched JSON:', data);
         const randIdx = getRandomInt(data.values.length)
         const row = data.values[randIdx]
-        document.getElementById("phrase_number").innerHTML = row[0]
+        //document.getElementById("phrase_number").innerHTML = row[0]
         document.getElementById("phrase_text").innerHTML = row[1]
       }).catch(err => {
           document.getElementById("phrase_text").innerHTML = err
