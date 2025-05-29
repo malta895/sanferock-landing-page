@@ -22,8 +22,15 @@ async function fetchSheet() {
   return await response.json();
 }
 
-async function init() {
-  try {
+function storePhrase(phrase) {
+  localStorage.setItem("phrase", phrase)
+}
+
+function getStoredPhrase() {
+  return localStorage.getItem("phrase")
+}
+
+async function getRandomPhrase() {
     const data = await fetchSheet();
     console.log('Fetched JSON:', data);
 
@@ -32,7 +39,23 @@ async function init() {
     const randIdx = getRandomInt(values.length)
     const row = values[randIdx]
 
-    document.getElementById("phrase_text").innerHTML = row[0]
+    return row[0]
+}
+
+async function retrievePhrase() {
+  const storedPhrase = getStoredPhrase()
+  if (storedPhrase){
+    return storedPhrase
+  }
+  const phrase = await getRandomPhrase()
+  storePhrase(phrase)
+  return phrase
+}
+
+async function init() {
+  try {
+    const phrase = await getRandomPhrase()
+    document.getElementById("phrase_text").innerHTML = phrase
   } catch (err) {
     document.getElementById("phrase_text").innerHTML = err;
   }
