@@ -1,4 +1,4 @@
-const GOOGLE_API_KEY = 'AIzaSyASHd9h4n4AVXDFgUGT9K8Ie4zaHzepIBA'
+const GOOGLE_API_KEY = 'AIzaSyBav8-fMMisCW2j4QVIeKj2CaPxoEQHNDQ'
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
