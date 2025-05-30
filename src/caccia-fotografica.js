@@ -34,7 +34,7 @@ function filterDay(values) {
   const day = new Date().getDay()
   return values.filter(val => {
       const [,dayFilter] = val
-      return !dayFilter || isNaN(dayFilter) || dayFilter == day
+      return !dayFilter || dayFilter == day
   })
 }
 
