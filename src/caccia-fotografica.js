@@ -6,7 +6,7 @@ function getRandomInt(max) {
 
 async function fetchSheet() {
   const response = await fetch(
-    "https://sheets.googleapis.com/v4/spreadsheets/1iMoIDMyHRUSPY9WDSc_JDwQy2e4CrHQUX_AWp0oO6a4/values/A:A",
+    "https://sheets.googleapis.com/v4/spreadsheets/1iMoIDMyHRUSPY9WDSc_JDwQy2e4CrHQUX_AWp0oO6a4/values/A:B",
     {
       headers: new Headers({
         "accept": "application/json",
@@ -30,11 +30,22 @@ function getStoredPhrase() {
   return localStorage.getItem("phrase")
 }
 
+function filterDay(values) {
+  const day = new Date().getDay()
+  return values.filter(val => {
+      const [,dayFilter] = val
+      return !dayFilter || isNaN(dayFilter) || dayFilter === day
+  })
+}
+
 async function getRandomPhrase() {
     const data = await fetchSheet();
     console.log('Fetched JSON:', data);
 
     const { values } = data;
+
+    const dayValues = filterDay(values)
+    console.log('dayValues', dayValues)
 
     const randIdx = getRandomInt(values.length)
     const row = values[randIdx]
