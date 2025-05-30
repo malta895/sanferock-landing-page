@@ -47,8 +47,8 @@ async function getRandomPhrase() {
     const dayValues = filterDay(values)
     console.log('dayValues', dayValues)
 
-    const randIdx = getRandomInt(values.length)
-    const row = values[randIdx]
+    const randIdx = getRandomInt(dayValues.length)
+    const row = dayValues[randIdx]
 
     return row[0]
 }
