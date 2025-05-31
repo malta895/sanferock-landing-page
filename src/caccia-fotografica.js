@@ -32,9 +32,18 @@ function getStoredPhrase() {
 
 function filterDay(values) {
   const day = new Date().getDay()
+  const hours = new Date().getHours()
+  const isFriday = day === 5 || (day === 6 && hours <= 6)
+  const isSaturday = (day === 6 && hours > 6) || day === 7
   return values.filter(val => {
       const [,dayFilter] = val
-      return !dayFilter || isNaN(dayFilter) || dayFilter == day
+      if (dayFilter === 'venerdì' && !isFriday) {
+        return false
+      }
+      if (dayFilter === 'sabato' && !isSaturday) {
+        return false
+      }
+      return true
   })
 }
 
