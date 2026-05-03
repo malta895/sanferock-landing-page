@@ -2,7 +2,7 @@ name: Build and deploy static content to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "sanfepop"]
   workflow_dispatch:
 
 permissions:

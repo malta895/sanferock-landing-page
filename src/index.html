@@ -5,64 +5,110 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="canonical" href="https://sanferock.com/" />
-  <title>SanfeRock 2025 | Festival a Tavernerio (CO) - Musica Live e Street Food</title>
+  <title>SanfePop! 2026 | 31 Maggio a Tavernerio (CO) - Musica Live, Birra e Street Food</title>
 
-  <!-- SEO Meta Description -->
   <meta name="description"
-    content="SanfeRock 2025, il festival di Tavernerio (Como): il 6 e 7 giugno, band, DJ, street food e birra artigianale. Ingresso gratuito!" />
+    content="SanfePop! 31 maggio al Parco della Casarga di Tavernerio (CO): musica dal vivo, birra artigianale e street food. Ingresso libero!" />
 
-  <!-- Open Graph / Preview messages on Facebook Whatsapp Instagram ecc. -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sanferock.com/" />
-  <meta property="og:title" content="SanfeRock 2025 | A Tavernerio (CO) Musica Live e Street Food" />
+  <meta property="og:title" content="SanfePop! | 31 Maggio a Tavernerio (CO)" />
   <meta property="og:description"
-    content="Partecipa a SanfeRock 2025: due serate di musica live, street food e birra artigianale a Tavernerio (CO). Ingresso gratuito!" />
+    content="Musica dal vivo, birra artigianale e street food al Parco della Casarga. Ingresso libero!" />
   <meta property="og:image" content="https://sanferock.com/logo.png" />
 
-  <!-- Favicon -->
   <link rel="icon" href="logo.png" type="image/png" />
 
   <link rel="stylesheet" href="dist.css" />
   <script src="easteregg.js"></script>
   <link href="fontawesome/css/all.min.css" rel="stylesheet">
-  </head>
+</head>
 
-<body>
-  <div class="flex min-h-screen flex-col items-center space-y-3 px-4 py-8">
-    <div class="col-start-3 row-start-3 flex flex-col bg-transparent p-0.5 dark:bg-white/10">
-      <div class="rounded-xl bg-white p-5 2xs:p-7 xs:p-10 text-sm/7 text-gray-700 dark:bg-gray-950 dark:text-gray-300">
-        <h1 class="font1 text-center text-4xl 2xs:text-5xl xs:text-6xl sm:text-8xl overflow-clip" onclick="javascript:easteregg()">
-          SANFEROCK
-        </h1>
-        <h2 class="font1 -mt-4 pt-1 text-center text-lg 2xs:text-xl xs:text-2xl sm:text-4xl">
-          LIVE MUSIC
-        </h2>
+<body class="relative min-h-screen overflow-x-hidden">
 
-        <div class="font2 mt-6 space-y-2 text-center text-md xs:text-lg sm:text-2xl">
-          <p class="text-sm xs:text-lg sm:text-2xl">
-            <i class="fab fa-instagram"></i> <a href="/instagram-consulta"
-              target="_blank"><span class="font-link-ig">@consultagiovanitavernerio</span></a>
-          <span class="text-xl hidden min-[505px]:inline">   &bull;   </span>
-          <span class="hidden max-[505px]:inline"><br/></span>
-            <i class="far fa-envelope hidden"></i> <a href="mailto:info@sanferock.com" target="_blank"><span
-                class="font-link-ig">info@sanferock.com</span></a>
-          </p>
-        </div>
+  <!-- SVG filter for the wavy checker distortion -->
+  <svg class="absolute h-0 w-0" aria-hidden="true">
+    <defs>
+      <filter id="wave" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="4" />
+        <feDisplacementMap in="SourceGraphic" scale="55" />
+      </filter>
+    </defs>
+  </svg>
 
-        <div class="font2 mt-6 space-y-2 text-center text-xs xs:text-sm sm:text-lg">
-          <p class="font-bold">Un evento di Consulta Giovani Tavernerio</p>
-          <p>
-            <a href="/chi-siamo">Chi Siamo</a>
-            <span class="text-xl">   &bull;   </span>
-            <a href="/sanferock-edizioni-passate">Edizioni passate</a>
-            <span class="text-xl">   &bull;   </span>
-            <a href="/eventi">I nostri Eventi</a>
-          </p>
-        </div>
-                
-      </div>
-    </div>
+  <!-- Wavy red/pink checker background -->
+  <div class="bg-checker checker-distort fixed inset-0 -z-10 scale-125"></div>
+
+  <!-- Floating music notes -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-0 overflow-hidden text-pop-ink">
+    <span class="absolute right-[6%] top-[3%] rotate-12 text-5xl xs:text-6xl sm:text-7xl">&#9835;</span>
+    <span class="absolute right-[18%] top-[8%] -rotate-6 text-4xl xs:text-5xl sm:text-6xl">&#9839;</span>
+    <span class="absolute right-[2%] top-[14%] rotate-3 text-4xl xs:text-5xl sm:text-6xl">&#9834;</span>
+    <span class="absolute left-[4%] top-[28%] -rotate-12 text-5xl xs:text-6xl sm:text-7xl">&#9836;</span>
+    <span class="absolute left-[14%] top-[34%] rotate-12 text-4xl xs:text-5xl sm:text-5xl">&#9834;</span>
+    <span class="absolute left-[2%] top-[40%] -rotate-3 text-5xl xs:text-6xl sm:text-7xl">&#9839;</span>
   </div>
+
+  <main class="relative z-10 mx-auto flex max-w-2xl flex-col items-center px-5 py-10 text-center sm:py-16">
+
+    <!-- TITLE -->
+    <h1 onclick="javascript:easteregg()" class="select-none cursor-pointer">
+      <span class="title-pop block text-7xl 2xs:text-8xl xs:text-9xl sm:text-[10rem] -rotate-3">Sanfe</span>
+      <span class="title-pop block text-7xl 2xs:text-8xl xs:text-9xl sm:text-[10rem] translate-x-12 sm:translate-x-20 rotate-3">Pop!</span>
+    </h1>
+
+    <!-- HEADLINE -->
+    <section class="mt-10 sm:mt-14 space-y-1">
+      <p class="outline-text text-2xl 2xs:text-3xl xs:text-4xl sm:text-5xl">MUSICA DAL VIVO</p>
+      <p class="outline-text text-xl 2xs:text-2xl xs:text-3xl sm:text-4xl">BIRRA ARTIGIANALE - STREET FOOD</p>
+    </section>
+
+    <!-- ARTISTS -->
+    <section class="mt-10 sm:mt-14 flex w-full flex-col gap-5 sm:gap-7">
+      <div class="self-start">
+        <span class="artist-pill script text-2xl 2xs:text-3xl xs:text-4xl sm:text-5xl">Angelo Soatin &amp; Jack</span>
+      </div>
+      <div class="self-end">
+        <span class="artist-pill script text-2xl 2xs:text-3xl xs:text-4xl sm:text-5xl">Cinque Frequenze</span>
+      </div>
+      <div class="self-start">
+        <span class="artist-pill script text-2xl 2xs:text-3xl xs:text-4xl sm:text-5xl">DJ Caterpilla Oldani</span>
+      </div>
+    </section>
+
+    <!-- WHEN -->
+    <section class="mt-12 sm:mt-16 space-y-1">
+      <p class="outline-text text-3xl 2xs:text-4xl xs:text-5xl sm:text-6xl">31 MAGGIO</p>
+      <p class="outline-text text-xl 2xs:text-2xl xs:text-3xl sm:text-4xl">A PARTIRE DALLE ORE 18:30</p>
+      <p class="outline-text text-2xl 2xs:text-3xl xs:text-4xl sm:text-5xl">INGRESSO LIBERO!</p>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="mt-10 sm:mt-14 space-y-2 text-sm xs:text-lg sm:text-2xl">
+      <p class="outline-text-thin">
+        <i class="fab fa-instagram"></i>
+        <a href="/instagram-consulta" target="_blank" class="underline">@consultagiovanitavernerio</a>
+      </p>
+      <p class="outline-text-thin">
+        <i class="far fa-envelope"></i>
+        <a href="mailto:info@sanferock.com" target="_blank" class="underline">info@sanferock.com</a>
+      </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-8 sm:mt-12 space-y-2 text-xs xs:text-sm sm:text-lg">
+      <p class="outline-text-thin font-bold">Un evento di Consulta Giovani Tavernerio</p>
+      <p class="outline-text-thin">
+        <a href="/chi-siamo" class="underline">Chi Siamo</a>
+        <span class="mx-2">&bull;</span>
+        <a href="/sanferock-edizioni-passate" class="underline">Edizioni passate</a>
+        <span class="mx-2">&bull;</span>
+        <a href="/eventi" class="underline">I nostri Eventi</a>
+      </p>
+    </footer>
+
+  </main>
+
 </body>
 
 </html>

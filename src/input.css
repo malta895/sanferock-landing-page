@@ -1,33 +1,122 @@
-@font-face {
-  font-family: 'KG WhY yOu GoTtA Be So MeAn';
-  font-style: normal;
-  font-weight: 400;
-  src: local('KG WhY yOu GoTtA Be So MeAn'), url(./fonts/KGWhYYouGoTtABeSoMeAn.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Super Brave';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Super Brave"), url(./fonts/super-brave.woff) format('woff');
-}
-
-body {
-  background: linear-gradient(to bottom, #54e6ed, #d4ff4b);
-}
-
-a {
-  text-decoration: underline !important;
-}
-
-
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+@font-face {
+  font-family: 'Genty';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Genty'), url(./fonts/GentyDemo-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lovelo';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Lovelo Line Light'), url('./fonts/Lovelo Line Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Lovelo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lovelo Line Bold'), url('./fonts/Lovelo Line Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Lovelo';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Lovelo Black'), url('./fonts/Lovelo Black.otf') format('opentype');
+}
 
 @theme {
   --breakpoint-2xs: 308px;
   --breakpoint-xs: 403px;
+
+  --color-pop-pink: #f6b9c8;
+  --color-pop-red: #d8253d;
+  --color-pop-cream: #fff5ee;
+  --color-pop-ink: #16243f;
 }
 
-.font1 { font-family: 'Super Brave'; }
-.font2 { font-family: 'KG WhY yOu GoTtA Be So MeAn', sans-serif; }
+body {
+  background-color: var(--color-pop-pink);
+  font-family: 'Lovelo', system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--color-pop-ink);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Wavy red+pink checker background, distorted via SVG filter */
+.bg-checker {
+  background-color: var(--color-pop-pink);
+  background-image:
+    repeating-conic-gradient(var(--color-pop-red) 0% 25%, var(--color-pop-pink) 0% 50%);
+  background-size: 220px 220px;
+  background-position: center;
+}
+
+.checker-distort {
+  filter: url(#wave);
+}
+
+/* Bold white text with thick red outline, faux-italic */
+.title-pop {
+  font-family: 'Genty', sans-serif;
+  color: white;
+  -webkit-text-stroke: 6px var(--color-pop-red);
+  paint-order: stroke fill;
+  text-shadow:
+    0 6px 0 rgba(0, 0, 0, 0.18);
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+  transform: skewX(-8deg);
+  transform-origin: 50% 100%;
+  display: inline-block;
+}
+
+/* White text with black outline (subtitle / info / location) */
+.outline-text {
+  color: white;
+  -webkit-text-stroke: 2px black;
+  paint-order: stroke fill;
+  font-family: 'Lovelo', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.outline-text-thin {
+  color: white;
+  -webkit-text-stroke: 1.5px black;
+  paint-order: stroke fill;
+  font-family: 'Lovelo', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+/* Brush script for artist names */
+.script {
+  font-family: 'Kaushan Script', cursive;
+  color: black;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+/* Pill behind each artist name (organic blob) */
+.artist-pill {
+  display: inline-block;
+  position: relative;
+  padding: 0.4em 1.2em;
+  background: var(--color-pop-cream);
+  border-radius: 9999px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.08);
+}
