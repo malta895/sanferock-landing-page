@@ -39,11 +39,11 @@
       </p>
     </header>
 
-    <!-- NAVETTA -->
-    <section class="rounded-2xl bg-white ring-2 ring-black shadow-md p-5 sm:p-7 space-y-3">
+    <!-- NAVETTA (only relevant on the day of SanfePop) -->
+    <section id="sanfepop-day-navetta" class="rounded-2xl bg-white ring-2 ring-black shadow-md p-5 sm:p-7 space-y-3">
       <h2 class="flex items-center gap-3 text-xl xs:text-2xl sm:text-3xl font-black tracking-wide text-pop-red">
         <i class="fas fa-shuttle-van" aria-hidden="true"></i>
-        NAVETTA
+        NAVETTA - SOLO PER SANFEPOP (31 MAGGIO)
       </h2>
       <ul class="space-y-2 text-sm xs:text-base sm:text-lg font-bold text-pop-ink">
         <li>
@@ -57,7 +57,7 @@
         </li>
         <li>
           <span class="text-pop-red">&bull;</span>
-          Va su e gi&ugrave; in continuazione, il tragitto dura circa <strong>10 minuti</strong>.
+          Va su e gi&ugrave; in continuazione, il tragitto dura <strong>meno di 5 minuti</strong>.
         </li>
       </ul>
     </section>
@@ -118,13 +118,22 @@
   </main>
 
   <script>
-    // Hide the SanfePop-day notice once the event date has passed.
+    // Hide SanfePop-only sections (navetta + reopening notice) when:
+    //   - the SanfePop date has passed, OR
+    //   - the visitor came from the SanfeNoise page (?source=sanfenoise)
     (function () {
+      var hide = false;
+      try {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('source') === 'sanfenoise') hide = true;
+      } catch (_) {}
       var cutoff = new Date('2026-06-01T00:00:00');
-      if (new Date() >= cutoff) {
-        var el = document.getElementById('sanfepop-day-notice');
+      if (new Date() >= cutoff) hide = true;
+      if (!hide) return;
+      ['sanfepop-day-navetta', 'sanfepop-day-notice'].forEach(function (id) {
+        var el = document.getElementById(id);
         if (el) el.remove();
-      }
+      });
     })();
   </script>
 
