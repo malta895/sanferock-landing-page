@@ -17,7 +17,7 @@
     content="Navetta, parcheggi consigliati e zone da evitare per gli eventi al Parco della Casarga." />
   <meta property="og:image" content="https://sanferock.com/logo.png" />
 
-  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="icon" href="favicon.png" type="image/png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,7 +53,10 @@
       <ul class="space-y-2 text-sm xs:text-base sm:text-lg font-bold text-pop-ink">
         <li>
           <span class="text-pop-red">&bull;</span>
-          Parte dal parcheggio di <strong>Via I Maggio</strong> e si ferma in <strong>Piazza Borella</strong>
+          Parte dal parcheggio di
+          <a href="https://maps.app.goo.gl/6FhtLCrzAL4ZVpU69" target="_blank" rel="noopener"
+             class="underline hover:text-pop-red"><strong>Via I Maggio</strong></a>
+          e si ferma in <strong>Piazza Borella</strong>
           (sotto il parco della Casarga, anch'essa utilizzabile come parcheggio).
         </li>
         <li>
@@ -111,6 +114,7 @@
           <span class="text-pop-red">&bull;</span>
           <a href="https://maps.app.goo.gl/9UBFiDer2t11uz5k9"
              target="_blank" rel="noopener" class="underline hover:text-pop-red">Via I Maggio sopra la chiesa dell'Eucarestia</a>
+          <span id="sanfepop-day-navetta-tag">(partenza navetta)</span>
         </li>
         <li>
           <span class="text-pop-red">&bull;</span>
@@ -177,7 +181,7 @@
       var cutoff = new Date('2026-06-01T00:00:00');
       if (new Date() >= cutoff) hide = true;
       if (!hide) return;
-      ['sanfepop-day-navetta', 'sanfepop-day-notice'].forEach(function (id) {
+      ['sanfepop-day-navetta', 'sanfepop-day-notice', 'sanfepop-day-navetta-tag'].forEach(function (id) {
         var el = document.getElementById(id);
         if (el) el.remove();
       });
