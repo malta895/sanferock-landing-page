@@ -40,6 +40,23 @@
   --color-pop-red: #d8253d;
   --color-pop-cream: #fff5ee;
   --color-pop-ink: #16243f;
+
+  --color-noise-bg: #0d1117;
+  --color-noise-fg: #e6e6e6;
+  --color-noise-dim: #7d8590;
+  --color-noise-green: #6dd66d;
+  --color-noise-blue: #58a6ff;
+}
+
+.noise-bg {
+  background-color: var(--color-noise-bg);
+  background-image:
+    linear-gradient(rgba(13, 17, 23, 0.55), rgba(13, 17, 23, 0.75)),
+    url('./analog.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body {
