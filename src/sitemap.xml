@@ -2,17 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sanferock.com/</loc>
+    <lastmod>2026-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://sanferock.com/sanfepop</loc>
+    <lastmod>2026-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://sanferock.com/sanfenoise</loc>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://sanferock.com/parcheggi</loc>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://sanferock.com/chi-siamo</loc>
   </url>
   <url>
     <loc>https://sanferock.com/sanferock-edizioni-passate</loc>
-  </url>
-  <url>
-    <loc>https://sanferock.com/eventi</loc>
   </url>
 </urlset>
