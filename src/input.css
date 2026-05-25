@@ -77,8 +77,10 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
+@layer base {
+  a {
+    text-decoration: none;
+  }
 }
 
 /* Wavy red+pink checker background, distorted via SVG filter */
