@@ -17,6 +17,12 @@
     content="il rumore prende forma con sanfeNOISE. talk, jam modulari, live set e dj set. 6 giugno al parco della casarga." />
   <meta property="og:image" content="https://sanferock.com/favicon-sanfenoise.png" />
 
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="sanfeNOISE | 6 Giugno a Tavernerio (CO)" />
+  <meta name="twitter:description"
+    content="il rumore prende forma con sanfeNOISE. talk, jam modulari, live set e dj set. 6 giugno al parco della casarga." />
+  <meta name="twitter:image" content="https://sanferock.com/favicon-sanfenoise.png" />
+
   <link rel="icon" href="favicon-sanfenoise.png" type="image/png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,6 +32,55 @@
   <link rel="stylesheet" href="dist.css" />
   <script src="easteregg.js"></script>
   <link href="fontawesome/css/all.min.css" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicEvent",
+    "name": "sanfeNOISE",
+    "startDate": "2026-06-06T18:30:00+02:00",
+    "endDate": "2026-06-07T00:00:00+02:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "description": "il rumore prende forma con sanfeNOISE: 6 giugno al parco della casarga di tavernerio (CO). talk, jam session modulari, live set e dj set. food and beer area.",
+    "image": "https://sanferock.com/favicon-sanfenoise.png",
+    "url": "https://sanferock.com/sanfenoise",
+    "isAccessibleForFree": true,
+    "location": {
+      "@type": "Place",
+      "name": "Parco della Casarga",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via della Liberazione 5",
+        "addressLocality": "Tavernerio",
+        "addressRegion": "CO",
+        "postalCode": "22038",
+        "addressCountry": "IT"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Consulta Giovani Tavernerio",
+      "url": "https://sanferock.com/"
+    },
+    "performer": [
+      { "@type": "MusicGroup", "name": "pitch.the.noise", "sameAs": "https://www.instagram.com/pitchthenoise/" },
+      { "@type": "MusicGroup", "name": "NONO", "sameAs": "https://www.instagram.com/nono_modular/" },
+      { "@type": "MusicGroup", "name": "milano.modulare", "sameAs": "https://www.instagram.com/milano_modulare/" },
+      { "@type": "MusicGroup", "name": "S.A.T", "sameAs": "https://www.instagram.com/sud_afternoon_tapes" },
+      { "@type": "MusicGroup", "name": "savnko", "sameAs": "https://www.instagram.com/savnko/" },
+      { "@type": "MusicGroup", "name": "treqani", "sameAs": "https://www.instagram.com/deriansky_/" }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2026-01-01T00:00:00+02:00",
+      "url": "https://sanferock.com/sanfenoise"
+    }
+  }
+  </script>
 </head>
 
 <body class="noise-bg relative min-h-screen overflow-x-hidden text-noise-fg" style="font-family: 'Space Mono', monospace;">
@@ -35,7 +90,7 @@
     <!-- TOP META -->
     <header class="flex items-start justify-between gap-3 text-xs xs:text-sm sm:text-base">
       <span class="text-noise-dim">&gt;module cgt contains</span>
-      <span class="text-noise-blue">&gt;6 giugno 18.30</span>
+      <time class="text-noise-blue" datetime="2026-06-06T18:30:00+02:00">&gt;6 giugno 18.30</time>
     </header>
 
     <!-- TITLE -->
@@ -47,6 +102,7 @@
 
     <!-- LINEUP -->
     <section class="space-y-4 text-base xs:text-lg sm:text-xl">
+      <h2 class="sr-only">Lineup</h2>
       <p>
         <span class="text-noise-green">[TALK]</span>
         <span class="text-noise-dim">\\</span>
@@ -78,6 +134,7 @@
 
     <!-- LOCATION -->
     <section class="text-base xs:text-lg sm:text-xl">
+      <h2 class="sr-only">Dove</h2>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=Parco+della+Casarga%2C+Via+della+Liberazione+5%2C+22038+Tavernerio+%28CO%29"
          target="_blank" rel="noopener" class="block text-noise-blue hover:text-[#4a96e6]">
         <p>
@@ -87,6 +144,11 @@
         <p class="pl-3">.tavernerio.(CO).</p>
       </a>
     </section>
+
+    <!-- FREE ENTRY -->
+    <p class="text-base xs:text-lg sm:text-xl text-noise-blue">
+      <span class="text-white">&gt;</span>ingresso.libero
+    </p>
 
     <!-- FOOD AND BEER -->
     <p class="text-base xs:text-lg sm:text-xl text-noise-blue">
