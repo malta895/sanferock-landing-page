@@ -97,6 +97,18 @@
       .sanfeNOISE.
     </h1>
 
+    <!-- CTA -->
+    <section class="space-y-3 text-center">
+      <p class="text-sm xs:text-base sm:text-lg text-noise-green">
+        &gt;rsvp.consigliato
+      </p>
+      <a href="https://www.eventbrite.it/e/biglietti-sanfenoise-1990339360606?aff=oddtdtcreator&amp;keep_tld=true"
+         target="_blank" rel="noopener"
+         class="inline-block border-2 border-noise-blue px-6 py-3 text-base xs:text-lg sm:text-xl text-white visited:text-white hover:bg-noise-blue/20 hover:border-white">
+        <span class="text-noise-blue">&gt;</span> RSVP_LINK.html
+      </a>
+    </section>
+
     <!-- LINEUP -->
     <section class="space-y-4 text-base xs:text-lg sm:text-xl">
       <h2 class="sr-only">Lineup</h2>
@@ -186,6 +198,27 @@
     </footer>
 
   </main>
+
+  <script>
+    // Forward UTM (and click-id) params to Eventbrite links so ad attribution survives the hop.
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var forward = new URLSearchParams();
+      params.forEach(function (val, key) {
+        if (/^utm_/i.test(key) || ['fbclid', 'gclid', 'ttclid', 'msclkid', 'igshid', 'twclid'].indexOf(key.toLowerCase()) !== -1) {
+          forward.append(key, val);
+        }
+      });
+      if (Array.from(forward).length === 0) return;
+      document.querySelectorAll('a[href*="eventbrite."]').forEach(function (a) {
+        try {
+          var url = new URL(a.href);
+          forward.forEach(function (v, k) { url.searchParams.set(k, v); });
+          a.href = url.toString();
+        } catch (_) {}
+      });
+    })();
+  </script>
 
 </body>
 
