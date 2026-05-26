@@ -80,6 +80,18 @@
       </p>
     </section>
 
+    <!-- IMPORTANT NOTICE (shown when ?source=sanfereolo) -->
+    <section id="sanfereolo-day-notice" class="hidden rounded-2xl bg-yellow-50 ring-2 ring-black shadow-md p-5 sm:p-7">
+      <h2 class="flex items-center gap-3 text-lg xs:text-xl sm:text-2xl font-black tracking-wide text-pop-ink">
+        <i class="fas fa-exclamation-triangle text-yellow-600" aria-hidden="true"></i>
+        DA SAPERE
+      </h2>
+      <p class="mt-2 text-sm xs:text-base sm:text-lg font-bold text-pop-ink">
+        <strong>Via I Maggio &egrave; chiusa al traffico</strong> durante la Fiera di San Fereolo.
+        Puoi parcheggiare in tutte le altre vie segnalate.
+      </p>
+    </section>
+
     <!-- PARKING AREAS -->
     <section class="rounded-2xl bg-white ring-2 ring-black shadow-md p-5 sm:p-7 space-y-3">
       <h2 class="flex items-center gap-3 text-xl xs:text-2xl sm:text-3xl font-black tracking-wide text-pop-red">
@@ -107,14 +119,16 @@
           <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Michelangelo%2C+Tavernerio+CO"
              target="_blank" rel="noopener" class="text-pop-red underline hover:text-red-900"><span aria-hidden="true">&#128205;</span> Via Michelangelo</a>
         </li>
-        <li>
+        <li class="via-i-maggio-entry">
           <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+I+Maggio+37%2C+Tavernerio+CO"
              target="_blank" rel="noopener" class="text-pop-red underline hover:text-red-900"><span aria-hidden="true">&#128205;</span> Via I Maggio n. 37</a>
+          <span class="sanfepop-day-only italic text-pop-ink/70">(il 31 maggio non disponibile fino alle 18.30 e comunque fino alla riapertura della strada)</span>
         </li>
-        <li>
+        <li class="via-i-maggio-entry">
           <a href="https://maps.app.goo.gl/9UBFiDer2t11uz5k9"
              target="_blank" rel="noopener" class="text-pop-red underline hover:text-red-900"><span aria-hidden="true">&#128205;</span> Via I Maggio sopra la chiesa dell'Eucarestia</a>
           <span id="sanfepop-day-navetta-tag">(partenza navetta)</span>
+          <span class="sanfepop-day-only italic text-pop-ink/70">(il 31 maggio non disponibile fino alle 18.30 e comunque fino alla riapertura della strada)</span>
         </li>
         <li>
           <a href="https://www.google.com/maps/search/?api=1&amp;query=Cimitero+Tavernerio+CO"
@@ -136,6 +150,10 @@
         <li>
           <a href="https://www.google.com/maps/search/?api=1&amp;query=Municipio+di+Tavernerio%2C+CO"
              target="_blank" rel="noopener" class="text-pop-red underline hover:text-red-900"><span aria-hidden="true">&#128205;</span> Municipio</a>
+        </li>
+        <li>
+          <a href="https://maps.app.goo.gl/oDVcHHH7r5PJMNRS6"
+             target="_blank" rel="noopener" class="text-pop-red underline hover:text-red-900"><span aria-hidden="true">&#128205;</span> Via Provinciale - Area Ghezzi</a>
         </li>
       </ul>
     </section>
@@ -176,18 +194,28 @@
     //   - the SanfePop date has passed, OR
     //   - the visitor came from the SanfeNoise page (?source=sanfenoise)
     (function () {
-      var hide = false;
       try {
         var params = new URLSearchParams(window.location.search);
-        if (params.get('source') === 'sanfenoise') hide = true;
+        var source = params.get('source');
+        var cutoff = new Date('2026-06-01T00:00:00');
+        var pastEvent = new Date() >= cutoff;
+        var sanfereoloMode = source === 'sanfereolo' && !pastEvent;
+        var hideSanfepopExtras = source === 'sanfenoise' || pastEvent || sanfereoloMode;
+
+        if (hideSanfepopExtras) {
+          ['sanfepop-day-navetta', 'sanfepop-day-notice', 'sanfepop-day-navetta-tag'].forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) el.remove();
+          });
+          document.querySelectorAll('.sanfepop-day-only').forEach(function (el) { el.remove(); });
+        }
+
+        if (sanfereoloMode) {
+          var sanfereoloNotice = document.getElementById('sanfereolo-day-notice');
+          if (sanfereoloNotice) sanfereoloNotice.classList.remove('hidden');
+          document.querySelectorAll('.via-i-maggio-entry').forEach(function (el) { el.remove(); });
+        }
       } catch (_) {}
-      var cutoff = new Date('2026-06-01T00:00:00');
-      if (new Date() >= cutoff) hide = true;
-      if (!hide) return;
-      ['sanfepop-day-navetta', 'sanfepop-day-notice', 'sanfepop-day-navetta-tag'].forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el) el.remove();
-      });
     })();
   </script>
 
